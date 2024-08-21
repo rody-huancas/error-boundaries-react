@@ -1,13 +1,23 @@
+import { useEffect, useState } from "react";
+
 import ComponentTest from "./components/ComponentTest";
+import ComponentTestAsync from "./components/ComponentTestAsync";
+
 import "./App.css";
-import { ErrorBoundary } from "./utilities";
 
 const App = () => {
+  const [name, setName] = useState<string | null>(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setName("Rody");
+    }, 2000);
+  }, []);
+
   return (
     <div className="App">
-      <ErrorBoundary fallbackComponent={<>NO ANDAA!!!!</>}>
-        <ComponentTest name="" />
-      </ErrorBoundary>
+      <ComponentTestAsync />
+      <ComponentTest name="Rody" />
     </div>
   );
 };
