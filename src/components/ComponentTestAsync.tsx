@@ -37,7 +37,7 @@ const ComponentTestAsync = () => {
       resetCondition={result}
       error={error}
     >
-      <div>{JSON.stringify(result)}</div>
+      <div style={{ width: "100vw", overflow: "hidden", textWrap: "wrap" }}>{JSON.stringify(result)}</div>
     </ErrorBoundary>
   );
 };
